@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const MyHomePage(
-        title: 'Flutter Demo Home Page',
+        title: 'Minimal Blog Card',
       ),
     );
   }
@@ -56,7 +56,6 @@ class CardWidget extends StatelessWidget {
       child: Expanded(
         flex: 1,
         child: ResponsiveContainerWidget(
-          flex: 0,
           height: 375 * screenRatio,
           width: 368 * screenRatio,
           decoration: BoxDecoration(
@@ -78,7 +77,6 @@ class CardWidget extends StatelessWidget {
             children: [
               // Image
               ResponsiveContainerWidget(
-                flex: 0,
                 height: 150 * screenRatio,
                 margin: EdgeInsets.symmetric(
                   vertical: 16 * screenRatio,
@@ -97,7 +95,6 @@ class CardWidget extends StatelessWidget {
               ),
               // Tag
               ResponsiveContainerWidget(
-                flex: 0,
                 width: 60 * screenRatio,
                 height: 18 * screenRatio,
                 margin: EdgeInsets.symmetric(
@@ -122,7 +119,6 @@ class CardWidget extends StatelessWidget {
               ),
               // Title
               ResponsiveContainerWidget(
-                flex: 0,
                 width: 300 * screenRatio,
                 height: 25 * screenRatio,
                 margin: EdgeInsets.only(
@@ -141,7 +137,6 @@ class CardWidget extends StatelessWidget {
               ),
               // Text
               ResponsiveContainerWidget(
-                flex: 0,
                 margin: EdgeInsets.only(
                   top: 0,
                   bottom: 20 * screenRatio,
@@ -167,7 +162,6 @@ class CardWidget extends StatelessWidget {
               ),
               // Autor
               ResponsiveContainerWidget(
-                flex: 0,
                 height: 15 * screenRatio,
                 margin: EdgeInsets.only(
                   top: 15 * screenRatio,
@@ -200,7 +194,6 @@ class ResponsiveContainerWidget extends StatelessWidget {
     this.decoration = const BoxDecoration(),
     this.width = double.infinity,
     this.height = double.infinity,
-    this.flex = 1,
   }) : super(key: key);
 
   final Widget widget;
@@ -208,27 +201,15 @@ class ResponsiveContainerWidget extends StatelessWidget {
   final Decoration decoration;
   final double width;
   final double height;
-  final int flex;
 
   @override
   Widget build(BuildContext context) {
-    return flex == 1
-        ? Expanded(
-            flex: flex,
-            child: Container(
-              margin: margin,
-              decoration: decoration,
-              width: width,
-              height: height,
-              child: widget,
-            ),
-          )
-        : Container(
-            margin: margin,
-            decoration: decoration,
-            width: width,
-            height: height,
-            child: widget,
-          );
+    return Container(
+      margin: margin,
+      decoration: decoration,
+      width: width,
+      height: height,
+      child: widget,
+    );
   }
 }
