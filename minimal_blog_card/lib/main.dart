@@ -132,6 +132,7 @@ class CardWidget extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 18 * screenRatio,
                     fontWeight: FontWeight.bold,
+                    fontFamily: 'Sora',
                   ),
                 ),
               ),
@@ -151,6 +152,7 @@ class CardWidget extends StatelessWidget {
                     fontSize: 14 * screenRatio,
                     fontWeight: FontWeight.w300,
                     color: const Color(0xFF6C727F),
+                    fontFamily: 'Sora',
                   ),
                 ),
               ),
@@ -175,6 +177,7 @@ class CardWidget extends StatelessWidget {
                     fontSize: 12 * screenRatio,
                     fontWeight: FontWeight.w300,
                     color: const Color(0xFF6C727F),
+                    fontFamily: 'Sora',
                   ),
                 ),
               ),
