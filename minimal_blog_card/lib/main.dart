@@ -47,21 +47,28 @@ class _MyHomePageState extends State<MyHomePage> {
 
 class CardWidget extends StatelessWidget {
   const CardWidget({Key? key}) : super(key: key);
+  final Color textColor = const Color(0xFF6C727F);
 
   @override
   Widget build(BuildContext context) {
-    double screenRatio =
-        MediaQuery.of(context).size.width / MediaQuery.of(context).size.height;
+    double screenRatio = 2;
+
+    if (MediaQuery.of(context).size.width <= 410) {
+      screenRatio = ((MediaQuery.of(context).size.width /
+              MediaQuery.of(context).size.height)) *
+          3.8;
+    }
+
     return Center(
       child: Expanded(
         flex: 1,
         child: ResponsiveContainerWidget(
-          height: 375 * screenRatio,
-          width: 368 * screenRatio,
+          height: 187.5 * screenRatio,
+          width: 184 * screenRatio,
           decoration: BoxDecoration(
             color: const Color(0xFFFFFFFF),
             borderRadius: BorderRadius.all(
-              Radius.circular(10 * screenRatio),
+              Radius.circular(5 * screenRatio),
             ),
             boxShadow: const [
               BoxShadow(
@@ -77,15 +84,15 @@ class CardWidget extends StatelessWidget {
             children: [
               // Image
               ResponsiveContainerWidget(
-                height: 150 * screenRatio,
+                height: 75 * screenRatio,
                 margin: EdgeInsets.symmetric(
-                  vertical: 16 * screenRatio,
-                  horizontal: 16 * screenRatio,
+                  vertical: 8 * screenRatio,
+                  horizontal: 8 * screenRatio,
                 ),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.all(
-                    Radius.circular(15 * screenRatio),
+                    Radius.circular(5 * screenRatio),
                   ),
                   image: const DecorationImage(
                     image: AssetImage('assets/cactus_img.jpg'),
@@ -95,15 +102,15 @@ class CardWidget extends StatelessWidget {
               ),
               // Tag
               ResponsiveContainerWidget(
-                width: 60 * screenRatio,
-                height: 18 * screenRatio,
+                width: 30 * screenRatio,
+                height: 12.5 * screenRatio,
                 margin: EdgeInsets.symmetric(
-                  horizontal: 16 * screenRatio,
+                  horizontal: 8 * screenRatio,
                 ),
                 decoration: BoxDecoration(
                   color: const Color(0xFF883AE1).withOpacity(0.20),
                   borderRadius: BorderRadius.all(
-                    Radius.circular(30 * screenRatio),
+                    Radius.circular(8 * screenRatio),
                   ),
                 ),
                 widget: Center(
@@ -111,7 +118,7 @@ class CardWidget extends StatelessWidget {
                     'Design',
                     style: TextStyle(
                       color: const Color(0xFF883AE1),
-                      fontSize: 10 * screenRatio,
+                      fontSize: 5.5 * screenRatio,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -119,18 +126,18 @@ class CardWidget extends StatelessWidget {
               ),
               // Title
               ResponsiveContainerWidget(
-                width: 300 * screenRatio,
-                height: 25 * screenRatio,
+                width: 150 * screenRatio,
+                height: 12.5 * screenRatio,
                 margin: EdgeInsets.only(
-                  top: 16 * screenRatio,
-                  bottom: 5 * screenRatio,
-                  left: 20 * screenRatio,
-                  right: 20 * screenRatio,
+                  top: 5 * screenRatio,
+                  bottom: 3.5 * screenRatio,
+                  left: 10 * screenRatio,
+                  right: 10 * screenRatio,
                 ),
                 widget: Text(
                   'Embracing Minimalism',
                   style: TextStyle(
-                    fontSize: 18 * screenRatio,
+                    fontSize: 9 * screenRatio,
                     fontWeight: FontWeight.bold,
                     fontFamily: 'Sora',
                   ),
@@ -140,43 +147,43 @@ class CardWidget extends StatelessWidget {
               ResponsiveContainerWidget(
                 margin: EdgeInsets.only(
                   top: 0,
-                  bottom: 20 * screenRatio,
-                  left: 20 * screenRatio,
-                  right: 20 * screenRatio,
+                  bottom: 10 * screenRatio,
+                  left: 10 * screenRatio,
+                  right: 10 * screenRatio,
                 ),
-                width: 300 * screenRatio,
-                height: 60 * screenRatio,
+                width: 150 * screenRatio,
+                height: 30 * screenRatio,
                 widget: Text(
                   'From minimalist sculptures to minimalist paintings, this blog will inspire you to appreciate the beauty that lies in simplicity.',
                   style: TextStyle(
-                    fontSize: 14 * screenRatio,
-                    fontWeight: FontWeight.w300,
-                    color: const Color(0xFF6C727F),
+                    fontSize: 6 * screenRatio,
+                    fontWeight: FontWeight.w500,
+                    color: textColor,
                     fontFamily: 'Sora',
                   ),
                 ),
               ),
               // Line
               Container(
-                color: const Color(0xFF6C727F).withOpacity(0.2),
+                color: textColor.withOpacity(0.2),
                 height: 1 * screenRatio,
                 width: double.infinity,
               ),
               // Autor
               ResponsiveContainerWidget(
-                height: 15 * screenRatio,
+                height: 7.5 * screenRatio,
                 margin: EdgeInsets.only(
-                  top: 15 * screenRatio,
-                  bottom: 15 * screenRatio,
-                  left: 20 * screenRatio,
-                  right: 20 * screenRatio,
+                  top: 5.5 * screenRatio,
+                  bottom: 7.5 * screenRatio,
+                  left: 10 * screenRatio,
+                  right: 10 * screenRatio,
                 ),
                 widget: Text(
                   'Annie Spratt',
                   style: TextStyle(
-                    fontSize: 12 * screenRatio,
-                    fontWeight: FontWeight.w300,
-                    color: const Color(0xFF6C727F),
+                    fontSize: 7 * screenRatio,
+                    fontWeight: FontWeight.w500,
+                    color: textColor,
                     fontFamily: 'Sora',
                   ),
                 ),
