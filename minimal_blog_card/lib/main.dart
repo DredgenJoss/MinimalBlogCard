@@ -181,7 +181,7 @@ class CardWidget extends StatelessWidget {
                 widget: Text(
                   'Annie Spratt',
                   style: TextStyle(
-                    fontSize: 7 * screenRatio,
+                    fontSize: 6 * screenRatio,
                     fontWeight: FontWeight.w500,
                     color: textColor,
                     fontFamily: 'Sora',
